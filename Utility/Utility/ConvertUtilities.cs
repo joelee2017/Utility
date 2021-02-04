@@ -402,7 +402,7 @@ namespace Utility
         // 類型參數:
         //   T:
         //     回傳物件
-        public static List<T> ModelListConvert<T>(this IEnumerable<object> model) where T : class, new()
+        public static List<T> ToModelList<T>(this IEnumerable<object> model) where T : class, new()
         {
             List<T> list = new List<T>();
             Type typeFromHandle = typeof(T);
@@ -436,7 +436,7 @@ namespace Utility
         // 類型參數:
         //   T:
         //     回傳物件
-        public static T ModelConvert<T>(this object item) where T : class, new()
+        public static T ToModel<T>(this object item) where T : class, new()
         {
             T val = new T();
             PropertyInfo[] properties = typeof(T).GetProperties();
